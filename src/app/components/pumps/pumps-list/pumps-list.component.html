@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Pumps</h1>
+    <table class="table align-middle table-bordered" *ngIf="pumps && pumps.length > 0">
+        <thead>
+          <tr class="align-middle text-center">
+            <th scope="col">#</th>
+            <th scope="col">Наименование</th>
+            <th scope="col">Максимальное давление, бар</th>
+            <th scope="col">Температура жидкости, 0С</th>
+            <th scope="col">Вес, кг</th>
+            <th scope="col">Мотор</th>
+            <th scope="col">Материал корпуса</th>
+            <th scope="col">Материал рабочего колеса</th>
+            <th scope="col">Описание насоса</th>
+            <th scope="col">Изображение насоса, *.jpg</th>
+            <th scope="col">Цена, руб.</th>
+            <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center" *ngFor="let pump of pumps">
+            <td>{{ pumps.indexOf(pump) + 1 }}</td>
+            <td>{{ pump.name }}</td>
+            <td>{{ pump.maxPressure }}</td>
+            <td>{{ pump.liquidTemperature }}</td>
+            <td>{{ pump.weight }}</td>
+            <td>{{ pump.engine.name }}</td>
+            <td>{{ pump.housingMaterial.name }}</td>
+            <td>{{ pump.lmpellerMaterial.name }}</td>
+            <td>{{ pump.description }}</td>
+            <td><img class="img-fluid rounded-start" alt="Насос" src="{{ pump.image }}" width="50"></td>
+            <td>{{ pump.price }} руб.</td>
+            <td><a [routerLink]="['/pumps','edit', pump.id]">Подробнее</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf="!pumps || pumps.length <= 0">Pumps not found</p>
+</div>

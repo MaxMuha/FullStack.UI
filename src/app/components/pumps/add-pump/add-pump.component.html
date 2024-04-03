@@ -1,0 +1,88 @@
+<div class="container">
+    <h1 class="mb-3 text-center">Добавить новый насос</h1>
+    <form #form="ngForm" (ngSubmit)="addPump()">
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-3">
+                    <h5 class="mb-3">Насос</h5>
+                    <label for="namePump" class="form-label">Наименование</label>
+                    <input type="text" class="form-control" id="namePump" name = "namePump" [(ngModel)] = "addPumpRequest.name">
+                </div>
+                <div class="mb-3">
+                  <label for="maxPressure" class="form-label">Максимальное давление, бар</label>
+                  <input type="number" class="form-control" id="maxPressure" name = "maxPressure" [(ngModel)] = "addPumpRequest.maxPressure">
+                </div>
+                <div class="mb-3">
+                    <label for="liquidTemperature" class="form-label">Температура жидкости, 0С</label>
+                    <input type="text" class="form-control" id="liquidTemperature" name = "liquidTemperature" [(ngModel)] = "addPumpRequest.liquidTemperature">
+                </div>
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Вес, кг</label>
+                    <input type="number" class="form-control" id="weight" name = "weight" [(ngModel)] = "addPumpRequest.weight">
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionPump" class="form-label">Описание насоса</label>
+                    <input type="text" class="form-control" id="descriptionPump" name = "descriptionPump" [(ngModel)] = "addPumpRequest.description">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Изображение насоса, *.jpg</label>
+                    <input type="text" class="form-control" id="image" name = "image" [(ngModel)] = "addPumpRequest.image">
+                </div>
+                <div class="mb-3">
+                    <label for="pricePump" class="form-label">Цена, руб</label>
+                    <input type="number" class="form-control" id="pricePump" name = "pricePump" [(ngModel)] = "addPumpRequest.price">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <h5 class="mb-3">Мотор</h5>
+                    <label for="nameEngine" class="form-label">Наименование</label>
+                    <input type="text" class="form-control" id="nameEngine" name = "nameEngine" [(ngModel)] = "addPumpRequest.engine.name">
+                </div>
+                <div class="mb-3">
+                    <label for="power" class="form-label">Мощность, кВт</label>
+                    <input type="text" class="form-control" id="power" name = "power" [(ngModel)] = "addPumpRequest.engine.power">
+                </div>
+                <div class="mb-3">
+                    <label for="amperage" class="form-label">Ток, А</label>
+                    <input type="text" class="form-control" id="amperage" name = "amperage" [(ngModel)] = "addPumpRequest.engine.amperage">
+                </div>
+                <div class="mb-3">
+                    <label for="ratedSpeed" class="form-label">Номинальная скорость, об/мин</label>
+                    <input type="text" class="form-control" id="ratedSpeed" name = "ratedSpeed" [(ngModel)] = "addPumpRequest.engine.ratedSpeed">
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionEngine" class="form-label">Описание мотора</label>
+                    <input type="text" class="form-control" id="descriptionEngine" name = "descriptionEngine" [(ngModel)] = "addPumpRequest.engine.description">
+                </div>
+                <div class="mb-3">
+                    <label for="priceEngine" class="form-label">Цена, руб</label>
+                    <input type="text" class="form-control" id="priceEngine" name = "priceEngine" [(ngModel)] = "addPumpRequest.engine.price">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <h5 class="mb-3">Материал корпуса</h5>
+                    <label for="nameHousingMaterial" class="form-label">Название</label>
+                    <input type="text" class="form-control" id="nameHousingMaterial" name = "nameHousingMaterial" [(ngModel)] = "addPumpRequest.housingMaterial.name">
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionHousingMaterial" class="form-label">Описание</label>
+                    <input type="text" class="form-control" id="descriptionHousingMaterial" name = "descriptionHousingMaterial" [(ngModel)] = "addPumpRequest.housingMaterial.description">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <h5 class="mb-3">Материал рабочего колеса</h5>
+                    <label for="nameLmpellerMaterial" class="form-label">Название</label>
+                    <input type="text" class="form-control" id="nameLmpellerMaterial" name = "nameLmpellerMaterial" [(ngModel)] = "addPumpRequest.lmpellerMaterial.name">
+                </div>
+                <div class="mb-3">
+                    <label for="descriptionLmpellerMaterial" class="form-label">Описание</label>
+                    <input type="text" class="form-control" id="descriptionLmpellerMaterial" name = "descriptionLmpellerMaterial" [(ngModel)] = "addPumpRequest.lmpellerMaterial.description">
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+        </div>
+    </form>
+</div>
